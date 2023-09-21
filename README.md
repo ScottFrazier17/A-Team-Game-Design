@@ -11,7 +11,8 @@ University of Texas at Arlington's Game Design CSE-4392
 
 - [X] Push the current physics skeleton to the main branch.
 - [ ] Revamp physics skeleton to make it work in Godot 3.5.2
-- [ ] Convert the asset pack in to a sprite sheet.
+- [X] Create animations for characters.
+- [ ] Import physics skeleton into game.
 - [ ] Add credit to artist.
 - [ ] Find out ways to expand on our game and make it a fuller game.
 
@@ -19,3 +20,5 @@ University of Texas at Arlington's Game Design CSE-4392
 Miro Board: https://miro.com/app/board/uXjVMlBc0Pk=/?share_link_id=773664970927
 
 Github: https://github.com/ScottFrazier17/A-Team-Game-Design
+
+Assets: https://maaot.itch.io/mossy-cavern
