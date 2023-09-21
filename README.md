@@ -17,4 +17,5 @@ University of Texas at Arlington's Game Design CSE-4392
 
 ## Important Links
 Miro Board: https://miro.com/app/board/uXjVMlBc0Pk=/?share_link_id=773664970927
+
 Github: https://github.com/ScottFrazier17/A-Team-Game-Design
