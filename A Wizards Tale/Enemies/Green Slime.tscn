@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Assets/Slimes/SlimeGreen/SlimeBasic_00004.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Slimes/SlimeGreen/SlimeBasic_00005.png" type="Texture" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://Assets/Slimes/SlimeGreen/SlimeBasic_00014.png" type="Texture" id=28]
 [ext_resource path="res://Assets/Slimes/SlimeGreen/SlimeBasic_00015.png" type="Texture" id=29]
 [ext_resource path="res://Assets/Slimes/SlimeGreen/SlimeBasic_00016.png" type="Texture" id=30]
+[ext_resource path="res://Enemies/Green Slime.gd" type="Script" id=31]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -43,12 +44,13 @@ animations = [ {
 radius = 96.0
 height = 0.0
 
-[node name="Green Slime" type="Area2D"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 31 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 27
+frame = 18
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
