@@ -6,4 +6,3 @@ University of Texas at Arlington's Game Design CSE-4392
 - Shawn Hyder
 - Scott Frazier
 - Shafin Barshan
-- Faiza Tafannum
