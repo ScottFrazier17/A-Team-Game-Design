@@ -12,9 +12,9 @@ University of Texas at Arlington's Game Design CSE-4392
 - [X] Push the current physics skeleton to the main branch.
 - [X] Create animations for characters.
 - [X] Create animaitons for plants.
-- [ ] Revamp physics skeleton to make it work in Godot 3.5.2
-- [ ] Import physics skeleton into game.
+- [X] Add physics skeleton into game.
 - [ ] Add credit to artist.
+- [ ] Merge Main Menu and World Scene
 - [ ] Find out ways to expand on our game and make it a fuller game.
 
 ## Important Links

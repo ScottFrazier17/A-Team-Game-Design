@@ -3,7 +3,7 @@ extends KinematicBody2D
 var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 const MOVE_SPEED = 1500
-const JUMP_FORCE = -1500
+const JUMP_FORCE = -1600
 const DASH_FORCE = 20000
 
 onready var animationPlayer = $AnimationPlayer
