@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Assets/Plant Animations/BlueFlower1/BlueFlower_00015.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Plant Animations/BlueFlower1/BlueFlower_00016.png" type="Texture" id=2]
@@ -60,8 +60,6 @@
 [ext_resource path="res://Assets/Plant Animations/BlueFlower1/BlueFlower_00059.png" type="Texture" id=58]
 [ext_resource path="res://Assets/Plant Animations/BlueFlower1/BlueFlower_00047.png" type="Texture" id=59]
 [ext_resource path="res://Assets/Plant Animations/BlueFlower1/BlueFlower_00048.png" type="Texture" id=60]
-[ext_resource path="res://World/Plants/LightBlueFlowerOpen.gd" type="Script" id=61]
-[ext_resource path="res://Assets/circle.png" type="Texture" id=62]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -74,15 +72,7 @@ animations = [ {
 [node name="Blue Flower Open" type="Node2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -56, -94 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 18
+frame = 38
 playing = true
-
-[node name="Light2D" type="Light2D" parent="."]
-position = Vector2( -172, -195 )
-scale = Vector2( 0.615625, 0.674375 )
-texture = ExtResource( 62 )
-color = Color( 0.027451, 0.952941, 1, 1 )
-script = ExtResource( 61 )

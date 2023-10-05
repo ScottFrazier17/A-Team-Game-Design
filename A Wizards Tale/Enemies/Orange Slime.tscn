@@ -43,12 +43,12 @@ animations = [ {
 radius = 108.0
 height = 0.0
 
-[node name="Orange Slime" type="Area2D"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 9
+frame = 12
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

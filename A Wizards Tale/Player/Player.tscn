@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Assets/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00001.png" type="Texture" id=1]
 [ext_resource path="res://Assets/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00002.png" type="Texture" id=2]
@@ -64,11 +64,12 @@
 [ext_resource path="res://Assets/BlueWizard/2BlueWizardJump/Dash2/DashBlue_00012.png" type="Texture" id=62]
 [ext_resource path="res://Assets/BlueWizard/2BlueWizardJump/Dash2/DashBlue_00014.png" type="Texture" id=63]
 [ext_resource path="res://Assets/BlueWizard/2BlueWizardJump/Dash2/DashBlue_00010.png" type="Texture" id=64]
+[ext_resource path="res://Player/Player.gd" type="Script" id=65]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 31 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 39 ), ExtResource( 30 ), ExtResource( 44 ), ExtResource( 35 ), ExtResource( 46 ), ExtResource( 43 ), ExtResource( 47 ), ExtResource( 64 ), ExtResource( 45 ), ExtResource( 62 ), ExtResource( 38 ), ExtResource( 63 ), ExtResource( 40 ) ],
-"loop": true,
+"loop": false,
 "name": "Dash",
 "speed": 30.0
 }, {
@@ -78,12 +79,12 @@ animations = [ {
 "speed": 15.0
 }, {
 "frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
-"loop": true,
+"loop": false,
 "name": "Jump",
 "speed": 30.0
 }, {
 "frames": [ ExtResource( 37 ), ExtResource( 29 ), ExtResource( 36 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 49 ), ExtResource( 48 ), ExtResource( 34 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ) ],
-"loop": true,
+"loop": false,
 "name": "Walk",
 "speed": 30.0
 } ]
@@ -92,13 +93,12 @@ animations = [ {
 radius = 50.0
 height = 68.0
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 65 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "Walk"
-frame = 12
-playing = true
+animation = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, 43 )
