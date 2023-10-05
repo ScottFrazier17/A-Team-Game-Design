@@ -418,6 +418,7 @@ points = PoolVector2Array( 85.21, 426.53, -0.119873, 426.53, -0.119873, 85.21, 8
 0/z_index = 0
 
 [node name="World" type="Node2D"]
+scale = Vector2( 0.31, 0.3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 779, 2778 )

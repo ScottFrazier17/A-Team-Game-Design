@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-const MOVE_SPEED = 1500
-const JUMP_FORCE = -1600
-const DASH_FORCE = 20000
+const MOVE_SPEED = 700
+const JUMP_FORCE = -1000
+const DASH_FORCE = 10000
 
 onready var animationPlayer = $AnimationPlayer
 onready var animation = get_node("AnimatedSprite")
@@ -13,6 +13,7 @@ var velocity = Vector2()
 var can_double_jump = false
 var dash_cooldown = 1.0
 var is_dashing = false
+var direction = 1
 
 func _physics_process(delta):
 	# Gravity
@@ -23,6 +24,7 @@ func _physics_process(delta):
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 
 	if input_vector.x != 0:
+		direction = input_vector.x
 		get_node("AnimatedSprite").flip_h = input_vector.x < 0
 
 	# Move the player
@@ -33,7 +35,7 @@ func _physics_process(delta):
 	
 	# Dash input handling
 	if Input.is_action_just_pressed("ui_select") and !is_dashing:
-		dash(input_vector.x)
+		dash(direction)
 	
 	# Jump input handling
 	if is_on_floor():
