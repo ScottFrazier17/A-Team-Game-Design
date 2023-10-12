@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=52 format=2]
+=======
+[gd_scene load_steps=48 format=2]
+>>>>>>> 6c28fa1327aae9954c21ff4483dc7fc4fc57f91d
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Mossy Tileset/Mossy - TileSet.png" type="Texture" id=2]
@@ -133,6 +137,7 @@ points = PoolVector2Array( 85.21, -0.119873, 426.53, -0.119873, 341.2, 341.2, 85
 [sub_resource type="ConvexPolygonShape2D" id=51]
 points = PoolVector2Array( 85.21, 426.53, -0.119873, 426.53, -0.119873, 85.21, 85.21, 85.21 )
 
+<<<<<<< HEAD
 [sub_resource type="ConvexPolygonShape2D" id=52]
 points = PoolVector2Array( 426.61, 426.55, -0.0400391, 426.55, -0.0400391, -0.0998535, 426.61, -0.0998535 )
 
@@ -145,6 +150,8 @@ points = PoolVector2Array( 511.92, 426.55, 85.27, 426.55, 85.27, -0.0998535, 511
 [sub_resource type="ConvexPolygonShape2D" id=55]
 points = PoolVector2Array( 85.27, 426.55, -0.0599365, 426.55, -0.0599365, 85.23, 85.27, 85.23 )
 
+=======
+>>>>>>> 6c28fa1327aae9954c21ff4483dc7fc4fc57f91d
 [sub_resource type="TileSet" id=4]
 0/name = "Mossy - TileSet.png 0"
 0/texture = ExtResource( 2 )
@@ -426,6 +433,7 @@ points = PoolVector2Array( 85.27, 426.55, -0.0599365, 426.55, -0.0599365, 85.23,
 "one_way_margin": 1.0,
 "shape": SubResource( 51 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+<<<<<<< HEAD
 }, {
 "autotile_coord": Vector2( 2, 5 ),
 "one_way": false,
@@ -450,6 +458,8 @@ points = PoolVector2Array( 85.27, 426.55, -0.0599365, 426.55, -0.0599365, 85.23,
 "one_way_margin": 1.0,
 "shape": SubResource( 55 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+=======
+>>>>>>> 6c28fa1327aae9954c21ff4483dc7fc4fc57f91d
 } ]
 0/z_index = 0
 

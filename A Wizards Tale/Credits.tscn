@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=76 format=2]
+=======
+[gd_scene load_steps=74 format=2]
+>>>>>>> 6c28fa1327aae9954c21ff4483dc7fc4fc57f91d
 
 [ext_resource path="res://ParallaxBG/Background.png" type="Texture" id=1]
 [ext_resource path="res://ParallaxBG/Midground.png" type="Texture" id=2]
@@ -12,7 +16,11 @@
 [ext_resource path="res://ParallaxBG/BlueFlower1/BlueFlower_00008.png" type="Texture" id=10]
 [ext_resource path="res://ParallaxBG/BlueFlower1/BlueFlower_00007.png" type="Texture" id=11]
 [ext_resource path="res://ParallaxBG/BlueFlower1/BlueFlower_00003.png" type="Texture" id=12]
+<<<<<<< HEAD
 [ext_resource path="res://FlowerAlight.gd" type="Script" id=13]
+=======
+[ext_resource path="res://Lighting/FlowerAlight.gd" type="Script" id=13]
+>>>>>>> 6c28fa1327aae9954c21ff4483dc7fc4fc57f91d
 [ext_resource path="res://ParallaxBG/BlueFlower1/BlueFlower_00052.png" type="Texture" id=14]
 [ext_resource path="res://ParallaxBG/BlueFlower1/BlueFlower_00057.png" type="Texture" id=15]
 [ext_resource path="res://ParallaxBG/BlueFlower1/BlueFlower_00055.png" type="Texture" id=16]
@@ -69,8 +77,11 @@
 [ext_resource path="res://ParallaxBG/BlueFlower1/BlueFlower_00031.png" type="Texture" id=67]
 [ext_resource path="res://ParallaxBG/Kaph-Regular.ttf" type="DynamicFontData" id=68]
 [ext_resource path="res://Credits.gd" type="Script" id=69]
+<<<<<<< HEAD
 [ext_resource path="res://Audio/Retro9.wav" type="AudioStream" id=70]
 [ext_resource path="res://Audio/Retro10.wav" type="AudioStream" id=71]
+=======
+>>>>>>> 6c28fa1327aae9954c21ff4483dc7fc4fc57f91d
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -129,7 +140,11 @@ motion_mirroring = Vector2( 1918, 0 )
 position = Vector2( 1379, 576 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
+<<<<<<< HEAD
 frame = 43
+=======
+frame = 10
+>>>>>>> 6c28fa1327aae9954c21ff4483dc7fc4fc57f91d
 playing = true
 flip_h = true
 flip_v = true
@@ -145,7 +160,11 @@ script = ExtResource( 13 )
 position = Vector2( 417, 776 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
+<<<<<<< HEAD
 frame = 43
+=======
+frame = 10
+>>>>>>> 6c28fa1327aae9954c21ff4483dc7fc4fc57f91d
 playing = true
 flip_h = true
 
@@ -160,7 +179,11 @@ script = ExtResource( 13 )
 position = Vector2( 707, 744 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
+<<<<<<< HEAD
 frame = 43
+=======
+frame = 10
+>>>>>>> 6c28fa1327aae9954c21ff4483dc7fc4fc57f91d
 playing = true
 
 [node name="FlowerAlight" type="Light2D" parent="Foreground/FlowerA3"]
@@ -179,7 +202,11 @@ texture = ExtResource( 3 )
 position = Vector2( 114, 906 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
+<<<<<<< HEAD
 frame = 44
+=======
+frame = 11
+>>>>>>> 6c28fa1327aae9954c21ff4483dc7fc4fc57f91d
 playing = true
 
 [node name="FlowerAlight" type="Light2D" parent="Foreground/FlowerA"]
@@ -226,6 +253,7 @@ custom_fonts/font = SubResource( 4 )
 text = "BACK"
 flat = true
 
+<<<<<<< HEAD
 [node name="UIHoverCredits" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 70 )
 
@@ -233,4 +261,6 @@ stream = ExtResource( 70 )
 stream = ExtResource( 71 )
 
 [connection signal="mouse_entered" from="Credits/CreditsBack" to="Credits" method="_on_CreditsBack_mouse_entered"]
+=======
+>>>>>>> 6c28fa1327aae9954c21ff4483dc7fc4fc57f91d
 [connection signal="pressed" from="Credits/CreditsBack" to="Credits" method="_on_CreditsBack_pressed"]
