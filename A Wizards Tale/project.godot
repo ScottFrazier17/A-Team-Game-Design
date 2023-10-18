@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 TransitionLayer="*res://TransitionLayer.tscn"
+MainMenuMusicController="*res://MainMenuMusicController.tscn"
 
 [display]
 
