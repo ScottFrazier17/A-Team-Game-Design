@@ -118,7 +118,7 @@ motion_mirroring = Vector2( 1918, 0 )
 position = Vector2( 1379, 576 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 21
+frame = 22
 playing = true
 flip_h = true
 flip_v = true
@@ -134,7 +134,7 @@ script = ExtResource( 69 )
 position = Vector2( 417, 776 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 21
+frame = 22
 playing = true
 flip_h = true
 
@@ -149,7 +149,7 @@ script = ExtResource( 69 )
 position = Vector2( 707, 744 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 21
+frame = 22
 playing = true
 
 [node name="FlowerAlight" type="Light2D" parent="Foreground/FlowerA3"]
@@ -168,7 +168,7 @@ texture = ExtResource( 30 )
 position = Vector2( 114, 906 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 22
+frame = 23
 playing = true
 
 [node name="FlowerAlight" type="Light2D" parent="Foreground/FlowerA"]
@@ -240,9 +240,9 @@ text = "Quit"
 flat = true
 
 [node name="Credits" type="Button" parent="Control"]
-margin_left = 1406.0
+margin_left = 1336.0
 margin_top = 980.0
-margin_right = 2127.0
+margin_right = 2057.0
 margin_bottom = 1057.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 0.862745, 0.443137, 1 )
