@@ -119,7 +119,7 @@ motion_mirroring = Vector2( 1918, 0 )
 position = Vector2( 1379, 576 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 12
+frame = 26
 playing = true
 flip_h = true
 flip_v = true
@@ -135,7 +135,7 @@ script = ExtResource( 68 )
 position = Vector2( 417, 776 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 12
+frame = 26
 playing = true
 flip_h = true
 
@@ -150,7 +150,7 @@ script = ExtResource( 68 )
 position = Vector2( 707, 744 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 12
+frame = 26
 playing = true
 
 [node name="FlowerAlight" type="Light2D" parent="Foreground/FlowerA3"]
@@ -169,7 +169,7 @@ texture = ExtResource( 18 )
 position = Vector2( 114, 906 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 13
+frame = 27
 playing = true
 
 [node name="FlowerAlight" type="Light2D" parent="Foreground/FlowerA"]
