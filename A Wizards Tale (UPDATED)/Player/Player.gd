@@ -223,7 +223,7 @@ func player_colliding_wall():
     
     
 func climb_pressed():
-  if(Input.is_action_pressed("ui_ctrl")):
+  if(Input.is_action_pressed("ui_shift")):
     return true
   else:
     return false 
