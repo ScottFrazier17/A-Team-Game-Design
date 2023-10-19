@@ -1,5 +1,6 @@
 extends Control
 
+
 func _ready():
   $MASTERSlider.value = AudioBusGlobal.Master
   $SFXSlider.value = AudioBusGlobal.sfx
@@ -27,3 +28,8 @@ func _on_MASTERSlider_value_changed(value):
 func _on_SFXSlider_value_changed(value):
   AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"),value)
   AudioBusGlobal.sfx = value
+
+func _process(delta):
+  if(Input.is_action_just_pressed("esc")):
+    get_tree().change_scene("res://Scenes/TestWorld.tscn")
+

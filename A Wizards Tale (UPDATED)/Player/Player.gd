@@ -62,6 +62,7 @@ func _physics_process(delta):
         animation.play("Jump")
         jumpfx.play()
         velocity.y = JUMP_FORCE
+        print("Double Jump")
         state = update_state(state)
         
     PlayerState.In_Air:

@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 TransitionLayer="*res://Scenes/TransitionLayer.tscn"
 MainMenuMusicController="*res://Scenes/MainMenuMusicController.tscn"
 AudioBusGlobal="*res://Scenes/AudioBusGlobal.gd"
+World_Info="*res://Scenes/WorldSceneInfoSaver.gd"
 
 [display]
 
