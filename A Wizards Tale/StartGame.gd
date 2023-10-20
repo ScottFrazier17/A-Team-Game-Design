@@ -15,7 +15,8 @@ func _on_Quit_pressed():
 
 func _on_StartGame_pressed():
   $"../../UIPress".play()
-  TransitionLayer.transition("res://Scenes/World.tscn")
+  #TransitionLayer.transition("res://Scenes/World.tscn")
+  TransitionLayer.transition("res://Scenes/TestWorld.tscn")
 
 
 func _on_Options_pressed():

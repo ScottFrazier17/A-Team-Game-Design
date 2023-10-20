@@ -133,7 +133,7 @@ motion_mirroring = Vector2( 1918, 0 )
 position = Vector2( 1379, 576 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 38
+frame = 42
 playing = true
 flip_h = true
 flip_v = true
@@ -149,7 +149,7 @@ script = ExtResource( 13 )
 position = Vector2( 417, 776 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 38
+frame = 42
 playing = true
 flip_h = true
 
@@ -164,7 +164,7 @@ script = ExtResource( 13 )
 position = Vector2( 707, 744 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 38
+frame = 42
 playing = true
 
 [node name="FlowerAlight" type="Light2D" parent="Foreground/FlowerA3"]
@@ -183,7 +183,7 @@ texture = ExtResource( 3 )
 position = Vector2( 114, 906 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 39
+frame = 43
 playing = true
 
 [node name="FlowerAlight" type="Light2D" parent="Foreground/FlowerA"]
@@ -204,22 +204,40 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 69 )
 
-[node name="VolumeLabel" type="Label" parent="Control2"]
+[node name="MASTERLabel" type="Label" parent="Control2"]
 margin_left = 701.0
-margin_top = 369.0
-margin_right = 946.0
-margin_bottom = 470.0
+margin_top = 365.0
+margin_right = 968.0
+margin_bottom = 466.0
 custom_fonts/font = SubResource( 3 )
-text = "VOLUME : "
+text = "MASTER : "
 
-[node name="VolumeSlider" type="HSlider" parent="Control2"]
+[node name="SFXLabel" type="Label" parent="Control2"]
+margin_left = 813.0
+margin_top = 448.0
+margin_right = 1058.0
+margin_bottom = 549.0
+custom_fonts/font = SubResource( 3 )
+text = "SFX : "
+
+[node name="MASTERSlider" type="HSlider" parent="Control2"]
 margin_left = 990.0
-margin_top = 336.0
+margin_top = 332.0
 margin_right = 1484.0
-margin_bottom = 455.0
+margin_bottom = 451.0
 min_value = -30.0
 max_value = 0.0
-step = 9.937
+step = 3.0
+tick_count = 10
+
+[node name="SFXSlider" type="HSlider" parent="Control2"]
+margin_left = 990.0
+margin_top = 418.0
+margin_right = 1484.0
+margin_bottom = 530.0
+min_value = -30.0
+max_value = 0.0
+step = 3.0
 tick_count = 10
 
 [node name="CheckBox" type="CheckBox" parent="Control2"]
@@ -244,11 +262,14 @@ flat = true
 
 [node name="UIHoverOptions" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 70 )
+bus = "SFX"
 
 [node name="UIPressOptions" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 71 )
+bus = "SFX"
 
-[connection signal="value_changed" from="Control2/VolumeSlider" to="Control2" method="_on_VolumeSlider_value_changed"]
+[connection signal="value_changed" from="Control2/MASTERSlider" to="Control2" method="_on_MASTERSlider_value_changed"]
+[connection signal="value_changed" from="Control2/SFXSlider" to="Control2" method="_on_SFXSlider_value_changed"]
 [connection signal="toggled" from="Control2/CheckBox" to="Control2" method="_on_CheckBox_toggled"]
 [connection signal="mouse_entered" from="Control2/OptionsBack" to="Control2" method="_on_OptionsBack_mouse_entered"]
 [connection signal="pressed" from="Control2/OptionsBack" to="Control2" method="_on_OptionsBack_pressed"]
