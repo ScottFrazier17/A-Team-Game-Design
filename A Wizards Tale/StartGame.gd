@@ -15,18 +15,19 @@ func _on_Quit_pressed():
 
 func _on_StartGame_pressed():
   $"../../UIPress".play()
-  TransitionLayer.transition("res://World.tscn")
+  #TransitionLayer.transition("res://Scenes/World.tscn")
+  TransitionLayer.transition("res://Scenes/TestWorld.tscn")
 
 
 func _on_Options_pressed():
   $"../../UIPress".play()
   #MainMenuMusicController.progress = MainMenuMusicController.getPlayBackPos()
-  TransitionLayer.transition("res://Options.tscn") # Replace with function body.
+  TransitionLayer.transition("res://Scenes/Options.tscn") # Replace with function body.
 
 
 func _on_Credits_pressed():
   $"../../UIPress".play()
-  TransitionLayer.transition("res://Credits.tscn")#pass # Replace with function body.
+  TransitionLayer.transition("res://Scenes/Credits.tscn") # Replace with function body.
 
 
 
