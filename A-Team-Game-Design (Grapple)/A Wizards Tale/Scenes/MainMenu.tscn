@@ -124,7 +124,7 @@ motion_mirroring = Vector2( 1918, 0 )
 position = Vector2( 1379, 576 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 50
+frame = 34
 playing = true
 flip_h = true
 flip_v = true
@@ -140,7 +140,7 @@ script = ExtResource( 68 )
 position = Vector2( 417, 776 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 50
+frame = 34
 playing = true
 flip_h = true
 
@@ -155,7 +155,7 @@ script = ExtResource( 68 )
 position = Vector2( 707, 744 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 50
+frame = 34
 playing = true
 
 [node name="FlowerAlight" type="Light2D" parent="Foreground/FlowerA3"]
@@ -234,9 +234,9 @@ custom_fonts/font = SubResource( 4 )
 text = "Options"
 
 [node name="Quit" type="Button" parent="Control"]
-margin_left = 62.0
+margin_left = 21.0
 margin_top = 977.0
-margin_right = 273.0
+margin_right = 232.0
 margin_bottom = 1054.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 0.862745, 0.443137, 1 )
@@ -246,10 +246,10 @@ text = "Quit"
 flat = true
 
 [node name="Credits" type="Button" parent="Control"]
-margin_left = 1499.0
-margin_top = 989.0
-margin_right = 1912.0
-margin_bottom = 1066.0
+margin_left = 1474.0
+margin_top = 977.0
+margin_right = 1887.0
+margin_bottom = 1054.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 0.862745, 0.443137, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
