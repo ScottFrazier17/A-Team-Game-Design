@@ -8,17 +8,17 @@ export var MOVE_SPEED = 700
 export var JUMP_FORCE = -1000
 export var DASH_FORCE = 1750
 const DASH_COOLDOWN = 0.25
+const STAMINA = 3.0
+
 export var dash_cooldown = DASH_COOLDOWN
 export var wall_jump_multiplier = 1.5
-const STAMINA = 3.0
+
 export var stamina = STAMINA 
 export var velocity = Vector2()
-onready var animationPlayer = $AnimationPlayer
+
 onready var animation = get_node("AnimatedSprite")
-onready var player_right_ray_1 = $PlayerRightRay1
-onready var player_right_ray_2 = $PlayerRightRay2
-onready var player_left_ray_1 = $PlayerLeftRay1
-onready var player_left_ray_2 = $PlayerLeftRay2
+onready var player_right_ray = $PlayerRightRay
+onready var player_left_ray = $PlayerLeftRay
 onready var player_grapple_rays = $GrappleRayCast
 onready var grapple_string = $GrappleString
 onready var state = PlayerState.Idle
@@ -39,7 +39,6 @@ func _physics_process(delta):
   match state:
     
     PlayerState.Idle:
-        print("Idle")
         velocity.x = 0 
         state = update_state(state)
         
@@ -214,9 +213,9 @@ func dash_pressed():
     
     
 func player_colliding_wall():
-  if(player_right_ray_1.is_colliding() and player_right_ray_2.is_colliding()):
+  if(player_right_ray.is_colliding()):
     return true
-  elif(player_left_ray_1.is_colliding() and player_left_ray_2.is_colliding()):
+  elif(player_left_ray.is_colliding()):
     return true
   else:
     return false 
@@ -267,5 +266,5 @@ func handle_grapple():
 
 
 func respawn():
-  get_tree().reload_current_scene()                               
+  var _current_scene = get_tree().reload_current_scene()                               
 
