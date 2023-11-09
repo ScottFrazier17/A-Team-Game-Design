@@ -1,0 +1,1862 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/SetOfSpikes.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/TestWorld.gd" type="Script" id=2]
+[ext_resource path="res://Assets/long_wood_spike.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Collectible.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 105.625, 80.0001 )
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 12.1426
+
+[node name="World" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_left = -266.0
+margin_top = -4334.0
+margin_right = 13419.0
+margin_bottom = 4421.0
+color = Color( 0.129412, 0.137255, 0.247059, 0.596078 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 732, -1280 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 732, -1280 )
+scale = Vector2( 0.4, 0.4 )
+current = true
+zoom = Vector2( 0.75, 0.85 )
+limit_left = 100
+limit_bottom = 5000
+
+[node name="ForestTile" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, -1 )
+show_collision = false
+tile_data = PoolIntArray( -1310713, 0, 196611, -1048574, 0, 196608, -1048573, 0, 196609, -1048572, 0, 196609, -1048571, 0, 196609, -1048570, 0, 196609, -1048569, 0, 196609, -1048568, 0, 196609, -1048567, 0, 196609, -1048566, 0, 196609, -1048565, 0, 196609, -1048564, 0, 262149, -1048563, 0, 196609, -1048562, 0, 196609, -1048561, 0, 196609, -1048560, 0, 196609, -1048559, 0, 196609, -1048558, 0, 196609, -1048557, 0, 196609, -1048556, 0, 262147, -1048555, 0, 2, -983028, 0, 65539, -983020, 0, 262144, -983019, 0, 131074, -983005, 0, 262148, -983004, 0, 196609, -983003, 0, 196610, -917492, 0, 65539, -917484, 0, 65539, -917469, 0, 131075, -851956, 0, 393220, -851955, 0, 196609, -851954, 0, 262150, -851951, 0, 0, -851950, 0, 2, -851948, 0, 65539, -786418, 0, 65539, -786415, 0, 262144, -786414, 0, 131074, -786412, 0, 65539, -720882, 0, 65539, -720879, 0, 65539, -720876, 0, 65539, -655346, 0, 65539, -655343, 0, 65539, -655340, 0, 65539, -589810, 0, 65539, -589807, 0, 65539, -589804, 0, 65539, -524274, 0, 65539, -524271, 0, 65539, -524268, 0, 65539, -458748, 0, 196611, -458738, 0, 65539, -458735, 0, 65539, -458732, 0, 65539, -458722, 0, 0, -458721, 0, 1, -458720, 0, 1, -458719, 0, 2, -393202, 0, 65539, -393199, 0, 65539, -393196, 0, 65539, -393186, 0, 65536, -393185, 0, 65537, -393184, 0, 65537, -393183, 0, 65540, -393182, 0, 1, -393181, 0, 1, -393180, 0, 1, -393179, 0, 1, -393178, 0, 1, -393177, 0, 1, -393176, 0, 1, -393175, 0, 1, -393174, 0, 1, -393173, 0, 1, -393172, 0, 1, -393171, 0, 1, -393170, 0, 1, -393169, 0, 1, -393168, 0, 1, -393167, 0, 2, -327666, 0, 65539, -327663, 0, 65539, -327660, 0, 65539, -327650, 0, 65536, -327649, 0, 65537, -327648, 0, 65537, -327647, 0, 4, -327646, 0, 131073, -327645, 0, 131073, -327644, 0, 131073, -327643, 0, 5, -327642, 0, 65537, -327641, 0, 65537, -327640, 0, 65537, -327639, 0, 65537, -327638, 0, 65537, -327637, 0, 65537, -327636, 0, 65537, -327635, 0, 65537, -327634, 0, 65537, -327633, 0, 65537, -327632, 0, 65537, -327631, 0, 65538, -262130, 0, 65539, -262127, 0, 65539, -262124, 0, 131075, -262120, 0, 196608, -262119, 0, 196609, -262118, 0, 196610, -262114, 0, 131072, -262113, 0, 131073, -262112, 0, 131073, -262111, 0, 131074, -262107, 0, 131072, -262106, 0, 131073, -262105, 0, 131073, -262104, 0, 131073, -262103, 0, 131073, -262102, 0, 131073, -262101, 0, 131073, -262100, 0, 131073, -262099, 0, 131073, -262098, 0, 131073, -262097, 0, 131073, -262096, 0, 5, -262095, 0, 65538, -196594, 0, 131075, -196591, 0, 65539, -196560, 0, 65536, -196559, 0, 65538, -131055, 0, 65539, -131037, 0, 3, -131024, 0, 65536, -131023, 0, 65538, -65529, 0, 3, -65519, 0, 65539, -65517, 0, 0, -65516, 0, 2, -65501, 0, 65539, -65488, 0, 65536, -65487, 0, 65538, 65535, 0, 0, 0, 0, 262146, 1, 0, 196609, 2, 0, 196609, 3, 0, 196609, 4, 0, 196609, 5, 0, 196609, 6, 0, 196609, 7, 0, 327686, 10, 0, 0, 11, 0, 1, 12, 0, 262146, 13, 0, 196610, 15, 0, 196608, 16, 0, 196609, 17, 0, 327685, 18, 0, 196609, 19, 0, 327683, 20, 0, 327682, 21, 0, 262150, 30, 0, 262148, 31, 0, 196609, 32, 0, 196609, 33, 0, 196609, 34, 0, 196609, 35, 0, 393221, 36, 0, 196609, 37, 0, 196609, 38, 0, 196609, 39, 0, 196609, 40, 0, 196609, 41, 0, 196609, 42, 0, 196609, 43, 0, 262149, 44, 0, 196610, 46, 0, 196608, 47, 0, 262147, 48, 0, 65541, 49, 0, 65538, 131071, 0, 65536, 65536, 0, 65538, 65543, 0, 65539, 65546, 0, 65536, 65547, 0, 65537, 65548, 0, 65538, 65553, 0, 65539, 65557, 0, 65539, 65566, 0, 65539, 65579, 0, 65539, 65583, 0, 65536, 65584, 0, 65537, 65585, 0, 65540, 65586, 0, 1, 65587, 0, 1, 65588, 0, 1, 65589, 0, 1, 65590, 0, 2, 196607, 0, 65536, 131072, 0, 65538, 131079, 0, 131075, 131082, 0, 65536, 131083, 0, 4, 131084, 0, 327682, 131085, 0, 196609, 131086, 0, 196609, 131087, 0, 196609, 131088, 0, 196609, 131089, 0, 393222, 131093, 0, 65539, 131102, 0, 65539, 131115, 0, 65539, 131119, 0, 131072, 131120, 0, 131073, 131121, 0, 131073, 131122, 0, 131073, 131123, 0, 131073, 131124, 0, 131073, 131125, 0, 131073, 131126, 0, 131074, 262143, 0, 65536, 196608, 0, 65538, 196611, 0, 3, 196618, 0, 65536, 196619, 0, 65538, 196629, 0, 393220, 196630, 0, 196609, 196631, 0, 196609, 196632, 0, 196609, 196633, 0, 196609, 196634, 0, 196609, 196635, 0, 196609, 196636, 0, 196609, 196637, 0, 196609, 196638, 0, 393221, 196639, 0, 196610, 196651, 0, 65539, 327679, 0, 65536, 262144, 0, 65540, 262145, 0, 1, 262146, 0, 1, 262147, 0, 6, 262148, 0, 1, 262149, 0, 2, 262151, 0, 0, 262152, 0, 1, 262153, 0, 1, 262154, 0, 65541, 262155, 0, 65538, 262187, 0, 65539, 393215, 0, 65536, 327680, 0, 65537, 327681, 0, 65537, 327682, 0, 65537, 327683, 0, 65537, 327684, 0, 65537, 327685, 0, 65540, 327686, 0, 1, 327687, 0, 65541, 327688, 0, 65537, 327689, 0, 65537, 327690, 0, 65537, 327691, 0, 65538, 327723, 0, 65539, 327730, 0, 196608, 327731, 0, 196609, 327732, 0, 196610, 458750, 0, 196608, 458751, 0, 327683, 393216, 0, 131073, 393217, 0, 131073, 393218, 0, 131073, 393219, 0, 131073, 393220, 0, 131073, 393221, 0, 131073, 393222, 0, 131073, 393223, 0, 131073, 393224, 0, 131073, 393225, 0, 131073, 393226, 0, 131073, 393227, 0, 131074, 393259, 0, 65539, 458795, 0, 393220, 458796, 0, 196609, 458797, 0, 196609, 458798, 0, 196609, 458799, 0, 196609, 458800, 0, 196609, 458801, 0, 196609, 458802, 0, 196609, 458803, 0, 196609, 458804, 0, 196609, 458805, 0, 196610 )
+
+[node name="SetOfSpikes" type="Area2D" parent="."]
+position = Vector2( 985, 800 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite6" type="Sprite" parent="SetOfSpikes"]
+position = Vector2( 211.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes"]
+position = Vector2( 112.5, -2.50049 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes2" type="Area2D" parent="."]
+position = Vector2( 1630, 206 )
+rotation = -1.5708
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes2"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes2"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes2"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes2"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes2"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes2"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes3" type="Area2D" parent="."]
+position = Vector2( 2140, 310 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes3"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes3"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes3"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes3"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes3"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes3"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes4" type="Area2D" parent="."]
+position = Vector2( 2311, 311 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes4"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes4"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes4"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes4"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes4"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes4"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes5" type="Area2D" parent="."]
+position = Vector2( 2479, 311 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes5"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes5"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes5"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes5"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes5"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes5"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes6" type="Area2D" parent="."]
+position = Vector2( 2647, 311 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes6"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes6"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes6"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes6"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes6"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes6"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes16" type="Area2D" parent="."]
+position = Vector2( 4273, 468 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes16"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes16"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes16"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes16"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes16"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes16"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes17" type="Area2D" parent="."]
+position = Vector2( 4444, 469 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes17"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes17"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes17"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes17"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes17"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes17"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes18" type="Area2D" parent="."]
+position = Vector2( 4612, 469 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes18"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes18"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes18"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes18"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes18"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes18"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes19" type="Area2D" parent="."]
+position = Vector2( 4780, 469 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes19"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes19"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes19"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes19"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes19"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes19"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes12" type="Area2D" parent="."]
+position = Vector2( 3601, 483 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes12"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes12"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes12"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes12"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes12"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes12"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes13" type="Area2D" parent="."]
+position = Vector2( 3772, 468 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes13"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes13"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes13"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes13"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes13"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes13"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes14" type="Area2D" parent="."]
+position = Vector2( 3940, 468 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes14"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes14"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes14"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes14"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes14"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes14"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SetOfSpikes15" type="Area2D" parent="."]
+position = Vector2( 4108, 468 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes15"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes15"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes15"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes15"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes15"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes15"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes20" type="Area2D" parent="."]
+position = Vector2( 6563, -18 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes20"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes20"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes20"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes20"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes20"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes20"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes21" type="Area2D" parent="."]
+position = Vector2( 6734, -17 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes21"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes21"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes21"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes21"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes21"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes21"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes22" type="Area2D" parent="."]
+position = Vector2( 6902, -17 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes22"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes22"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes22"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes22"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes22"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes22"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes23" type="Area2D" parent="."]
+position = Vector2( 7070, -17 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes23"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes23"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes23"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes23"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes23"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes23"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes30" type="Area2D" parent="."]
+position = Vector2( 5727, -146 )
+rotation = -1.5708
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes30"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes30"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes30"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes30"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes30"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes30"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes28" type="Area2D" parent="."]
+position = Vector2( 7733, -5.99994 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes28"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes28"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes28"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes28"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes28"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes28"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes29" type="Area2D" parent="."]
+position = Vector2( 7636, -11.9999 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes29"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes29"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes29"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes29"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes29"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes29"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes24" type="Area2D" parent="."]
+position = Vector2( 5891, -3 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes24"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes24"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes24"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes24"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes24"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes24"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes25" type="Area2D" parent="."]
+position = Vector2( 6062, -18 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes25"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes25"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes25"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes25"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes25"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes25"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes26" type="Area2D" parent="."]
+position = Vector2( 6230, -18 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes26"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes26"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes26"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes26"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes26"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes26"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SetOfSpikes27" type="Area2D" parent="."]
+position = Vector2( 6398, -18 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes27"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes27"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes27"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes27"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes27"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes27"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes31" type="Area2D" parent="."]
+position = Vector2( 5128, -22 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes31"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes31"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes31"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes31"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes31"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes31"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes32" type="Area2D" parent="."]
+position = Vector2( 5299, -21 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes32"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes32"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes32"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes32"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes32"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes32"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes33" type="Area2D" parent="."]
+position = Vector2( 5467, -21 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes33"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes33"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes33"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes33"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes33"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes33"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes34" type="Area2D" parent="."]
+position = Vector2( 5635, -21 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes34"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes34"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes34"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes34"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes34"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes34"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes35" type="Area2D" parent="."]
+position = Vector2( 7134, -14 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes35"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes35"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes35"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes35"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes35"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes35"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SetOfSpikes38" type="Area2D" parent="."]
+position = Vector2( 7197, 1147 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes38"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes38"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes38"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes38"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes38"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes38"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes39" type="Area2D" parent="."]
+position = Vector2( 7368, 1148 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes39"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes39"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes39"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes39"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes39"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes39"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes40" type="Area2D" parent="."]
+position = Vector2( 7536, 1148 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes40"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes40"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes40"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes40"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes40"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes40"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes41" type="Area2D" parent="."]
+position = Vector2( 7704, 1148 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes41"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes41"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes41"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes41"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes41"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes41"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes42" type="Area2D" parent="."]
+position = Vector2( 7768, 1151 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes42"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes42"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes42"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes42"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes42"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes42"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SetOfSpikes43" type="Area2D" parent="."]
+position = Vector2( 7929, 1149 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes43"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes43"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes43"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes43"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes43"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes43"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes44" type="Area2D" parent="."]
+position = Vector2( 8100, 1150 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes44"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes44"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes44"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes44"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes44"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes44"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes45" type="Area2D" parent="."]
+position = Vector2( 8268, 1150 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes45"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes45"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes45"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes45"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes45"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes45"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes46" type="Area2D" parent="."]
+position = Vector2( 8436, 1150 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes46"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes46"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes46"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes46"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes46"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes46"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes47" type="Area2D" parent="."]
+position = Vector2( 8500, 1153 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes47"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes47"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes47"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes47"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes47"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes47"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SetOfSpikes37" type="Area2D" parent="."]
+position = Vector2( 5729, -337 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes37"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes37"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes37"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes37"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes37"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes37"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SetOfSpikes36" type="Area2D" parent="."]
+position = Vector2( 4963, -22 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes36"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes36"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes36"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes36"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes36"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes36"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes7" type="Area2D" parent="."]
+position = Vector2( 3935, -4303 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes7"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes7"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes7"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes7"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes7"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes7"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes8" type="Area2D" parent="."]
+position = Vector2( 5295, -3948 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes8"]
+position = Vector2( 1190, -3940 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes8"]
+position = Vector2( -605, -4985 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes8"]
+position = Vector2( -562.5, -4985 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes8"]
+position = Vector2( -521.25, -4985 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes8"]
+position = Vector2( -481.25, -4985 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes8"]
+position = Vector2( -563.125, -4987.5 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes9" type="Area2D" parent="."]
+position = Vector2( 4061, -4322 )
+rotation = -1.5708
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes9"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes9"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes9"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes9"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes9"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes9"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes11" type="Area2D" parent="."]
+position = Vector2( 1192, -1160 )
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes11"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes11"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes11"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes11"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes11"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes11"]
+position = Vector2( 93.7498, 14.9995 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="SetOfSpikes10" type="Area2D" parent="."]
+position = Vector2( 4009, -4444 )
+rotation = -3.14159
+scale = Vector2( 0.8, 0.4 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SetOfSpikes10"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="SetOfSpikes10"]
+position = Vector2( 43.75, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="SetOfSpikes10"]
+position = Vector2( 86.25, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="SetOfSpikes10"]
+position = Vector2( 127.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="SetOfSpikes10"]
+position = Vector2( 167.5, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SetOfSpikes10"]
+position = Vector2( 85.625, -2.50073 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 3 )
+
+[node name="Hook" type="StaticBody2D" parent="."]
+position = Vector2( 4171, -518 )
+rotation = 3.14159
+scale = Vector2( 0.7, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hook"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook"]
+scale = Vector2( 2, 4 )
+shape = SubResource( 4 )
+
+[node name="Hook14" type="StaticBody2D" parent="."]
+position = Vector2( 4291, -518 )
+rotation = 3.14159
+scale = Vector2( 0.7, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hook14"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook14"]
+scale = Vector2( 2, 4 )
+shape = SubResource( 4 )
+
+[node name="Hook2" type="StaticBody2D" parent="."]
+position = Vector2( 5219, -506 )
+rotation = 3.14159
+scale = Vector2( 0.7, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hook2"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook2"]
+position = Vector2( 0.00402832, 4.99976 )
+scale = Vector2( 2, 4 )
+shape = SubResource( 4 )
+
+[node name="Hook11" type="StaticBody2D" parent="."]
+position = Vector2( 5235, -3342 )
+rotation = -1.5708
+scale = Vector2( 0.7, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hook11"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook11"]
+position = Vector2( 0.00402832, 4.99976 )
+scale = Vector2( 2, 4 )
+shape = SubResource( 4 )
+
+[node name="Hook12" type="StaticBody2D" parent="."]
+position = Vector2( 6213, -3633 )
+rotation = -1.5708
+scale = Vector2( 0.7, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hook12"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook12"]
+position = Vector2( 0.00402832, 4.99976 )
+scale = Vector2( 2, 4 )
+shape = SubResource( 4 )
+
+[node name="Hook3" type="StaticBody2D" parent="."]
+position = Vector2( 6341, -504 )
+rotation = 3.14159
+scale = Vector2( 0.7, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hook3"]
+modulate = Color( 0.152941, 0.152941, 0.152941, 1 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook3"]
+scale = Vector2( 2, 4 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hook13" type="StaticBody2D" parent="."]
+position = Vector2( 7753, 449 )
+rotation = 3.14159
+scale = Vector2( 0.7, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hook13"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook13"]
+scale = Vector2( 2, 4 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hook4" type="StaticBody2D" parent="."]
+position = Vector2( 4720, -4029 )
+rotation = 1.5708
+scale = Vector2( 0.7, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hook4"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook4"]
+scale = Vector2( 2, 4 )
+shape = SubResource( 4 )
+
+[node name="Hook5" type="StaticBody2D" parent="."]
+position = Vector2( 4531, -4359 )
+rotation = 1.56207
+scale = Vector2( 0.7, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hook5"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -1.42847, -2.5 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook5"]
+position = Vector2( 0.00012207, -2.50012 )
+scale = Vector2( 2, 4 )
+shape = SubResource( 4 )
+
+[node name="Hook6" type="StaticBody2D" parent="."]
+position = Vector2( 728, -881 )
+rotation = 3.14159
+scale = Vector2( 0.7, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hook6"]
+modulate = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+position = Vector2( -1.42847, -2.5 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook6"]
+position = Vector2( 0.00012207, -2.50012 )
+scale = Vector2( 2, 4 )
+shape = SubResource( 4 )
+
+[node name="Hook7" type="StaticBody2D" parent="."]
+position = Vector2( 511, -946 )
+rotation = 3.14159
+scale = Vector2( 0.7, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hook7"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -1.42847, -2.5 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook7"]
+position = Vector2( 0.00012207, -2.50012 )
+scale = Vector2( 2, 4 )
+shape = SubResource( 4 )
+
+[node name="Hook8" type="StaticBody2D" parent="."]
+position = Vector2( 402, -1195 )
+rotation = 3.14159
+scale = Vector2( 0.7, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hook8"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -1.42847, -2.5 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook8"]
+position = Vector2( 0.00012207, -2.50012 )
+scale = Vector2( 2, 4 )
+shape = SubResource( 4 )
+
+[node name="Hook9" type="StaticBody2D" parent="."]
+position = Vector2( 506, -1422 )
+rotation = 3.14159
+scale = Vector2( 0.7, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hook9"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -1.42847, -2.5 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook9"]
+position = Vector2( 0.00012207, -2.50012 )
+scale = Vector2( 2, 4 )
+shape = SubResource( 4 )
+
+[node name="Hook10" type="StaticBody2D" parent="."]
+position = Vector2( 1223, -3125 )
+rotation = 3.14159
+scale = Vector2( 0.7, 0.4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hook10"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -1.42847, -2.5 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook10"]
+position = Vector2( 0.00012207, -2.50012 )
+scale = Vector2( 2, 4 )
+shape = SubResource( 4 )
+
+[node name="Collectible" parent="." instance=ExtResource( 6 )]
+position = Vector2( 500, 400 )
+
+[node name="Collectible2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 689, 400 )
+
+[node name="Collectible3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 805, 502 )
+
+[connection signal="body_entered" from="SetOfSpikes" to="SetOfSpikes" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes2" to="SetOfSpikes2" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes3" to="SetOfSpikes3" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes4" to="SetOfSpikes4" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes5" to="SetOfSpikes5" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes6" to="SetOfSpikes6" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes16" to="SetOfSpikes16" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes17" to="SetOfSpikes17" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes18" to="SetOfSpikes18" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes19" to="SetOfSpikes19" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes12" to="SetOfSpikes12" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes13" to="SetOfSpikes13" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes14" to="SetOfSpikes14" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes15" to="SetOfSpikes15" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes20" to="SetOfSpikes20" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes21" to="SetOfSpikes21" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes22" to="SetOfSpikes22" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes23" to="SetOfSpikes23" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes30" to="SetOfSpikes30" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes28" to="SetOfSpikes28" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes29" to="SetOfSpikes29" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes24" to="SetOfSpikes24" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes25" to="SetOfSpikes25" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes26" to="SetOfSpikes26" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes27" to="SetOfSpikes27" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes31" to="SetOfSpikes31" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes32" to="SetOfSpikes32" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes33" to="SetOfSpikes33" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes34" to="SetOfSpikes34" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes35" to="SetOfSpikes35" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes38" to="SetOfSpikes38" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes39" to="SetOfSpikes39" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes40" to="SetOfSpikes40" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes41" to="SetOfSpikes41" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes42" to="SetOfSpikes42" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes43" to="SetOfSpikes43" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes44" to="SetOfSpikes44" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes45" to="SetOfSpikes45" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes46" to="SetOfSpikes46" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes47" to="SetOfSpikes47" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes37" to="SetOfSpikes37" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes36" to="SetOfSpikes36" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes7" to="SetOfSpikes7" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes8" to="SetOfSpikes8" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes9" to="SetOfSpikes9" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes11" to="SetOfSpikes11" method="_on_SetOfSpikes_body_entered"]
+[connection signal="body_entered" from="SetOfSpikes10" to="SetOfSpikes10" method="_on_SetOfSpikes_body_entered"]
