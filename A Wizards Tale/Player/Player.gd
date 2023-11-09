@@ -27,6 +27,7 @@ onready var jumpfx = $Jump
 onready var Dashfx = $Dash
 onready var walk1fx = $Walk1
 onready var walk2fx = $Walk2
+onready var stats = $Stats
 
 var input_vector = Vector2()
   
@@ -47,27 +48,27 @@ func _physics_process(delta):
         velocity.x = input_vector.x * MOVE_SPEED
         animation.play("Walk")
         orient_model()
-        print("Walk")
+        #print("Walk")
         state = update_state(state)
         
     PlayerState.Jump:
         animation.play("Jump")
         jumpfx.play()
         velocity.y = JUMP_FORCE
-        print("Jump")
+        #print("Jump")
         state = update_state(state)
         
     PlayerState.DoubleJump:
         animation.play("Jump")
         jumpfx.play()
         velocity.y = JUMP_FORCE
-        print("Double Jump")
+        #print("Double Jump")
         state = update_state(state)
         
     PlayerState.In_Air:
         velocity.x = input_vector.x * MOVE_SPEED
         orient_model()
-        print("In_Air")
+        #print("In_Air")
         state = update_state(state)
         
     PlayerState.Dash:
@@ -76,13 +77,13 @@ func _physics_process(delta):
           Dashfx.play()
         velocity.x = input_vector.x * DASH_FORCE 
         dash_cooldown -= delta
-        print("Dash")
+        #print("Dash")
         state = update_state(state)
         
     PlayerState.Climb:
         velocity.y = -input_vector.y * 450
         stamina -= delta
-        print("Climbing")
+        #print("Climbing")
         state = update_state(state)
           
                          
@@ -268,3 +269,12 @@ func handle_grapple():
 func respawn():
   var _current_scene = get_tree().reload_current_scene()                               
 
+
+func _on_Hurtbox_area_entered(area):
+    stats.CURRENT_HEALTH -= 1
+    # animation.modulate = Color(1,0,0)
+
+    print("PLAYER OUCH!")
+    if stats.CURRENT_HEALTH == 0:
+        World_Info.player_pos = World_Info.starter_pos
+        respawn()

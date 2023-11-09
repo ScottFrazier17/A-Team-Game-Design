@@ -21,6 +21,8 @@ onready var animation = get_node("AnimatedSprite")
 onready var stats = $Stats
 
 func _ready():
+    print(stats.MAX_HEALTH)
+    print(stats.CURRENT_HEALTH)
     velocity.x = MOVE_SPEED
 
 func _physics_process(delta):
@@ -47,7 +49,6 @@ func _physics_process(delta):
             pass
 
 func _on_Hurtbox_area_entered(_area):
-#    knockback = area.knockback * 100
     stats.CURRENT_HEALTH -= 1
 
     print("OUCH!")

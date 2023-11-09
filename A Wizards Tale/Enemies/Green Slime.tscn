@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Assets/Slimes/SlimeGreen/SlimeBasic_00004.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Slimes/SlimeGreen/SlimeBasic_00005.png" type="Texture" id=2]
@@ -32,7 +32,8 @@
 [ext_resource path="res://Assets/Slimes/SlimeGreen/SlimeBasic_00016.png" type="Texture" id=30]
 [ext_resource path="res://Enemies/Green Slime.gd" type="Script" id=31]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=32]
-[ext_resource path="res://Stats.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Hitboxes and Hurtboxes/Stats.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=34]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -43,12 +44,16 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 49.0
-height = 0.0
+radius = 39.0
+height = 40.0
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 41.0
-height = 48.0
+radius = 29.9999
+height = 48.0002
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 34.0
+height = 70.0
 
 [node name="Green Slime" type="KinematicBody2D"]
 script = ExtResource( 31 )
@@ -57,23 +62,34 @@ script = ExtResource( 31 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 3
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 1, 6 )
+rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 32 )]
 collision_layer = 8
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2( 1, 4 )
+position = Vector2( 1, -16 )
 rotation = 1.5708
 shape = SubResource( 3 )
 
 [node name="Stats" parent="." instance=ExtResource( 33 )]
-MAX_HEALTH = 2
+
+[node name="Hitbox" parent="." instance=ExtResource( 34 )]
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( -1, 11 )
+rotation = 1.5708
+shape = SubResource( 4 )
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="Hurtbox"]
+[editable path="Hitbox"]

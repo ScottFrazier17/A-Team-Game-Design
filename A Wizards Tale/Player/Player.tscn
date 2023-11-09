@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://Assets/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00001.png" type="Texture" id=1]
 [ext_resource path="res://Assets/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00002.png" type="Texture" id=2]
@@ -65,6 +65,8 @@
 [ext_resource path="res://Assets/BlueWizard/2BlueWizardJump/Dash2/DashBlue_00014.png" type="Texture" id=63]
 [ext_resource path="res://Assets/BlueWizard/2BlueWizardJump/Dash2/DashBlue_00010.png" type="Texture" id=64]
 [ext_resource path="res://Player/Player.gd" type="Script" id=65]
+[ext_resource path="res://Hitboxes and Hurtboxes/Stats.tscn" type="PackedScene" id=66]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=67]
 [ext_resource path="res://Player/RayCast2D.gd" type="Script" id=68]
 [ext_resource path="res://Audio/WHOOSH_ARM_SWING_01.wav" type="AudioStream" id=69]
 [ext_resource path="res://Audio/Forest 1.wav" type="AudioStream" id=70]
@@ -102,6 +104,10 @@ height = 68.0
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 47.5
 height = 140.0
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 45.0
+height = 125.0
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 0.4, 0.4 )
@@ -258,6 +264,9 @@ stream = ExtResource( 70 )
 [node name="Walk2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 71 )
 
+[node name="Stats" parent="." instance=ExtResource( 66 )]
+MAX_HEALTH = 2
+
 [node name="Hitbox" parent="." instance=ExtResource( 73 )]
 collision_mask = 8
 
@@ -265,4 +274,15 @@ collision_mask = 8
 position = Vector2( -2.5, 30 )
 shape = SubResource( 3 )
 
+[node name="Hurtbox" parent="." instance=ExtResource( 67 )]
+position = Vector2( 2.5, 0 )
+collision_layer = 4
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( -2.5, 20 )
+shape = SubResource( 4 )
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+
 [editable path="Hitbox"]
+[editable path="Hurtbox"]
