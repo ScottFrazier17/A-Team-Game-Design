@@ -71,7 +71,7 @@ const DASH_STAMINA_CONSUMPTION_MULTIPLIER = 3      #dash consumes more Stamina t
 onready var StaminaPie = $StaminaPie               #TextureProgress object that displays Player Stamina on screen
 onready var stamina = STAMINA                      #Current Stamina of Player variable starts off with max base Stamina as game starts
 onready var StaminaRegenLag = STAMINA_REGEN_HOLDUP #Current "Time" remaining until Stamina can start regenerating
-
+# onready var $Player.global_position = World_Info.player_pos
 
 #code for creating hook dectector for player (used for locating a hook to grapple to) [TO BE REPLACED WITH NODE IN EDITOR INSTEAD OF CODE]
 var hookDetector = Area2D.new()
@@ -136,7 +136,7 @@ func _physics_process(delta):
   match state:                                     #match statement used for state transitioning
     
     PlayerState.Idle:
-        print("Idling")
+        #print("Idling")
         velocity.y += GRAVITY*delta                #Player is accelerated downwards by gravity
         stamina_regen(delta)                       #Regenerates stamina        
         update_stamina_objects(delta)              #Updates everything to do with stamina of the player                          
@@ -145,7 +145,7 @@ func _physics_process(delta):
         state = update_state(state,delta)                #Checks player input and changes or remains in state accordingly
         
     PlayerState.Walk:
-        print("Walking")
+        #print("Walking")
         velocity.y += GRAVITY*delta                #Player is accelerated downwards by gravity
         stamina_regen(delta)                       #Regenerates stamina
         update_stamina_objects(delta)              #Updates everything to do with stamina of the player
@@ -157,7 +157,7 @@ func _physics_process(delta):
         state = update_state(state,delta)                #Checks player input and changes or remains in state accordingly
         
     PlayerState.Jump:
-        print("Jumping")
+        #print("Jumping")
         velocity.y += GRAVITY*delta                #Player is accelerated downwards by gravity
         update_stamina_objects(delta)              #Updates everything to do with stamina of the player   
         animation.play("Jump")                     #Animation played for jumping
@@ -166,7 +166,7 @@ func _physics_process(delta):
         state = update_state(state,delta)                #Checks player input and changes or remains in state accordingly
         
     PlayerState.DoubleJump:
-        print("DoubleJumping")
+        #print("DoubleJumping")
         velocity.y += GRAVITY*delta
         update_stamina_objects(delta)
         animation.play("Jump")
@@ -175,7 +175,7 @@ func _physics_process(delta):
         state = update_state(state,delta) #Checks player input and changes or remains in state accordingly
         
     PlayerState.In_Air:
-        print("In Air")
+        #print("In Air")
         stamina_regen(delta)                             #Regenerates stamina
         update_stamina_objects(delta)                    #Updates everything to do with stamina of the player
         if(was_in_grapple):
@@ -187,7 +187,7 @@ func _physics_process(delta):
         state = update_state(state,delta)                      #Checks player input and changes or remains in state accordingly
         
     PlayerState.Dash:
-        print("dashing")
+        #print("dashing")
         velocity.y += GRAVITY*delta                                           #Player is accelerated downwards by gravity
         stamina -= delta*STAMINA_DRAIN*DASH_STAMINA_CONSUMPTION_MULTIPLIER    #Current Stamina decremented while dashing 
         StaminaRegenLag = STAMINA_REGEN_HOLDUP                                #Stamina regen is stopped, as StaminaRegenLag is reset, have to wait for StaminaRegenLag to become 0 until Stamina can regen again
@@ -200,7 +200,7 @@ func _physics_process(delta):
         state = update_state(state,delta)                                           #Checks player input and changes or remains in state accordingly
         
     PlayerState.Climb:
-        print("climbing")
+        #print("climbing")
         velocity.y += GRAVITY*delta                     #Player is accelerated downwards by gravity
         animation.play("Walk")                          #Animation played for Climb
         velocity.y = -input_vector.y * 450              #Velocity upwards set for player while climbing
@@ -210,7 +210,7 @@ func _physics_process(delta):
         state = update_state(state,delta)                     #Checks player input and changes or remains in state accordingly
     PlayerState.Grapple:
       if(hookLocked):                                                          #if the player is attached to a hook currently
-        print("grappling")
+        #print("grappling")
         player_to_hook_vector = (hookLocked.global_position)-(global_position) #calculates vector from player to hook
         grapple_len = global_position.distance_to(hookLocked.global_position)  #calculates distance from player to hook
         World_Info.BodyPosition = global_position                              #saves current player position 
