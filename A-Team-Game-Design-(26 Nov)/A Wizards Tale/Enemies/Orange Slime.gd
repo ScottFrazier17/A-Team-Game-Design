@@ -61,11 +61,11 @@ func _on_Hurtbox_area_entered(_area):
     animation.modulate = Color(1,0,0)
     if($Timer.is_stopped()):
         $Timer.start()
-    #stats.CURRENT_HEALTH -= 1
+    stats.CURRENT_HEALTH -= 1
 
-    #print("OUCH!")
-    #if stats.CURRENT_HEALTH == 0:
-    #    queue_free()
+    print("OUCH!")
+    if stats.CURRENT_HEALTH == 0:
+        queue_free()
 
 
 func _on_Timer_timeout():
