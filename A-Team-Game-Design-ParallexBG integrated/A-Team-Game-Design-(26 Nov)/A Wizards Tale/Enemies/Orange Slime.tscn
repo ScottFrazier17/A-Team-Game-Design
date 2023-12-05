@@ -1,0 +1,117 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00000.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00002.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00001.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00007.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00008.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00004.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00005.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00006.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00003.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00009.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00010.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00011.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00012.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00013.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00014.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00015.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00016.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00017.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00018.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00019.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00020.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00021.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00022.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00023.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00024.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00025.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00026.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00027.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00028.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00029.png" type="Texture" id=30]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Enemies/Orange Slime.gd" type="Script" id=32]
+[ext_resource path="res://Hitboxes and Hurtboxes/Stats.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=34]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 25.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 89.0
+height = 204.0
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 45.0
+height = 66.0
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 67.9995
+height = 270.001
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 1416.5, 827.5 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Orange Slime" type="KinematicBody2D" parent="."]
+position = Vector2( -9, -36 )
+collision_layer = 4
+script = ExtResource( 32 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Orange Slime"]
+frames = SubResource( 1 )
+animation = "Idle"
+frame = 10
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Orange Slime"]
+visible = false
+position = Vector2( 8, 37 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="Hurtbox" parent="Orange Slime" instance=ExtResource( 31 )]
+visible = false
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="Orange Slime/Hurtbox" index="0"]
+position = Vector2( 7, -20 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="Stats" parent="Orange Slime" instance=ExtResource( 33 )]
+
+[node name="Hitbox" parent="Orange Slime" instance=ExtResource( 34 )]
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Orange Slime/Hitbox" index="0"]
+position = Vector2( 14, 56 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="Orange Slime"]
+
+[node name="Position2D" type="Position2D" parent="Orange Slime"]
+position = Vector2( 1, 0 )
+
+[node name="ShootTimer" type="Timer" parent="Orange Slime"]
+
+[node name="ShootingRange" type="Area2D" parent="Orange Slime"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Orange Slime/ShootingRange"]
+position = Vector2( 24.5, -50.5 )
+shape = SubResource( 5 )
+
+[connection signal="area_entered" from="Orange Slime/Hurtbox" to="Orange Slime" method="_on_Hurtbox_area_entered"]
+[connection signal="timeout" from="Orange Slime/Timer" to="Orange Slime" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Orange Slime/ShootTimer" to="Orange Slime" method="_on_ShootTimer_timeout"]
+
+[editable path="Orange Slime/Hurtbox"]
+[editable path="Orange Slime/Hitbox"]
