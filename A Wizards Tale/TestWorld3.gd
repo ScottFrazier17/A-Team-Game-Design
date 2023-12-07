@@ -6,6 +6,8 @@ var collectibleChildren = []
 var is_ending_lvl = false
 
 func _ready():
+  $WinWait.set_wait_time(5)
+  $CanvasLayer/WinMessage.visible = false
   $Player.global_position = World_Info.player_pos
   for collectible in get_children():
     if(collectible.name.begins_with("Collectible")):
@@ -17,7 +19,7 @@ func _ready():
           collectible.queue_free()
 func _process(_delta):
   
-  if($Portal/Area2D.overlaps_body($Player)): #and World_Info.collected_amt == 10):
+  if($Portal/Area2D.overlaps_body($Player) and World_Info.collected_amt == 10):
     World_Info.collected_amt = 0
     is_end_of_level()
   if(!is_ending_lvl):
@@ -47,9 +49,15 @@ func _draw():
 
 func is_end_of_level():
   is_ending_lvl = true
+  $CanvasLayer/WinMessage.visible = true
+  $WinWait.start()
+   
+    
+
+
+func _on_WinWait_timeout():
   World_Info.starter_pos = Vector2(206,536)
   World_Info.player_pos = Vector2(206,536)
   World_Info.curr_level = "res://Scenes/Level1.tscn"
   World_Info.removedCollectibles = []
   TransitionLayer.transition("res://Scenes/MainMenu.tscn") 
-    

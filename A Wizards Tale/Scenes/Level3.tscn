@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TestWorld3.gd" type="Script" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://ParallaxBG/Kaph-Regular.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://Assets/Vector.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Portals/portal_purple.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/ParallaxLevelBG.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/WinMessage.tscn" type="PackedScene" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 12 )
@@ -52,6 +54,8 @@ margin_left = 1668.0
 margin_top = 2.0
 margin_right = 1668.0
 margin_bottom = 2.0
+
+[node name="WinMessage" parent="World3/CanvasLayer" instance=ExtResource( 16 )]
 
 [node name="Hook3" parent="World3" instance=ExtResource( 7 )]
 position = Vector2( 669, -298 )
@@ -237,5 +241,13 @@ position = Vector2( 0.631592, 2.89362 )
 position = Vector2( -3, 2 )
 shape = SubResource( 2 )
 
+[node name="ParallaxBackground" parent="World3" instance=ExtResource( 15 )]
+offset = Vector2( 0, -90 )
+transform = Transform2D( 1, 0, 0, 1, 0, -90 )
+
+[node name="WinWait" type="Timer" parent="World3"]
+
 [node name="Canvas" parent="." instance=ExtResource( 1 )]
 pause_mode = 2
+
+[connection signal="timeout" from="World3/WinWait" to="World3" method="_on_WinWait_timeout"]

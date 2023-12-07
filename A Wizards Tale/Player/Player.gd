@@ -429,6 +429,8 @@ func grapple_pressed():
 
 func respawn():
   World_Info.player_health = 4
+  World_Info.removedCollectibles = []
+  World_Info.collected_amt = 0
   if get_tree().reload_current_scene() != OK:
     print("respawn failed")                               
 

@@ -15,7 +15,7 @@ func _ready():
 func _process(_delta):
   #print($Player.global_position)
   #print($Portal.global_position)
-  if($Portal/Area2D.overlaps_body($Player)): #and World_Info.collected_amt == 10):
+  if($Portal/Area2D.overlaps_body($Player) and World_Info.collected_amt == 10):
     World_Info.collected_amt = 0
     is_end_of_level()
   if(!is_ending_lvl):

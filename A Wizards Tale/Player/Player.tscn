@@ -106,7 +106,7 @@ radius = 50.0
 height = 68.0
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 37.5
+radius = 60.0
 height = 120.0
 
 [sub_resource type="CapsuleShape2D" id=4]
@@ -122,7 +122,6 @@ frames = SubResource( 1 )
 animation = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( -1, 43 )
 shape = SubResource( 2 )
 
@@ -197,7 +196,7 @@ bus = "SFX"
 collision_layer = 4
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2( -2.5, 37.5 )
+position = Vector2( -2.5, 20 )
 shape = SubResource( 3 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 76 )]
