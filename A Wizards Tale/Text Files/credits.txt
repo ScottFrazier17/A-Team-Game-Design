@@ -8,21 +8,51 @@ Shafin Barshan
 
 Shawn Hyder
 
+There was a fourth at one point :]
+
+Music and SFX
+- Game Music
+Creepy Atmospheric Ambient Music
+https://blockydk.itch.io/creepy-atmospheric-ambient-music
+
+- Menu UI Sounds
+Universal UI/Menu Soundpack
+https://ellr.itch.io/universal-ui-soundpack
+
+- Player Sounds
+    - Dash, Jump and Hurt
+    https://shapeforms.itch.io/shapeforms-audio-free-sfx
+
 Art
 
-- Tilemap by XXXXX
-- Background art by XXXXX
-- Character sprite and animation by XXXXXXXX
-- Enemy Slimes ART and animation by XXXXX
-- Flowers Art and Animation by XXXXXXXX
+- Tileset
+- Character sprite and animation
+- Slime sprites and animation
+- Glowing Plants and animation
+Mossy Cavern 
+https://maaot.itch.io/mossy-cavern
 
-Music and Effects
+-Spikes and grapple points
+https://gamedeveloperstudio.itch.io/floor-spikes
 
-- Creepy Forest produced by XXXXXXXX
-- Powers
-    - Dash by XXXXX
-    - Jump by XXXXX
-    - Menu effects by XXXXXXXX
-    - other effects by XXXXXXX
+- Main Menu Parallax BG
+Pixel art forest
+https://edermunizz.itch.io/free-pixel-art-forest
 
-- 
+-Parallax BG in game
+https://github.com/bitbrain/godot-tutorials/tree/godot-3.x/parallax-scrolling
+
+- Game Font
+https://www.dafont.com/kaph.font
+
+- Tutorial Art
+Shawn H
+
+-Ui stamina and Collectibles
+Shafin B
+
+-UI Hearts
+https://github.com/uheartbeast/youtube-tutorials/tree/master/Action%20RPG/UI
+
+-Portal
+https://actuallykron.itch.io/32x32-2d-portal-asset-pack
