@@ -46,7 +46,7 @@ func _draw():
 func is_end_of_level():
   is_ending_lvl = true
   World_Info.curr_level = "res://Scenes/Level2.tscn"
-  World_Info.starter_pos = Vector2(230,250)
-  World_Info.player_pos = Vector2(230,250)
+  World_Info.starter_pos = Vector2(50,250)
+  World_Info.player_pos = Vector2(50,250)
   World_Info.removedCollectibles = []
   TransitionLayer.transition(World_Info.curr_level)    

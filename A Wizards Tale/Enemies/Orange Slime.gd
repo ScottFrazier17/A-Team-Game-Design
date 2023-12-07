@@ -24,7 +24,7 @@ var poison_spike_scene = preload("res://Enemies/PoisonSpike.tscn")
 onready var shooting_range_area2D = $ShootingRange
 onready var shooting_range_width = get_node("ShootingRange/CollisionShape2D").get_shape().get_extents().x
 onready var player_in_sight = false
-
+onready var HurtFx = $Hurt
 onready var stats = $Stats
 var shootingRange
 
@@ -79,6 +79,8 @@ func _physics_process(delta):
 
 func _on_Hurtbox_area_entered(_area):
     animation.modulate = Color(1,0,0)
+#    if !HurtFx.playing:
+#            HurtFx.play()
     if($Timer.is_stopped()):
         $Timer.start()
     #stats.CURRENT_HEALTH -= 1

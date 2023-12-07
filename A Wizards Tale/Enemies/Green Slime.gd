@@ -21,6 +21,7 @@ var direction = 1
 onready var animation = get_node("AnimatedSprite")
 #onready var player = get_node("res://Player/Player.tscn")
 onready var stats = $Stats
+onready var HurtFx = $Hurt
 
 func _ready():
     velocity.x = MOVE_SPEED
@@ -79,7 +80,8 @@ func is_player_nearby() -> bool:
 func _on_Hurtbox_area_entered(_area):
 #    knockback = area.knockback * 100
     stats.CURRENT_HEALTH -= 1
-
+#    if !HurtFx.playing:
+#            HurtFx.play()
     print("OUCH!")
     if stats.CURRENT_HEALTH == 0:
         queue_free()

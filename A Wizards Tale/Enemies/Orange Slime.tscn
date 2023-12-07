@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00000.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00002.png" type="Texture" id=2]
@@ -34,6 +34,7 @@
 [ext_resource path="res://Enemies/Orange Slime.gd" type="Script" id=32]
 [ext_resource path="res://Hitboxes and Hurtboxes/Stats.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Audio/PlayerHurt.wav" type="AudioStream" id=35]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -68,7 +69,7 @@ script = ExtResource( 32 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Orange Slime"]
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 20
+frame = 11
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Orange Slime"]
@@ -110,6 +111,10 @@ position = Vector2( 1, 0 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Orange Slime/ShootingRange"]
 position = Vector2( 24.5, -50.5 )
 shape = SubResource( 5 )
+
+[node name="Hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 35 )
+volume_db = 24.0
 
 [connection signal="area_entered" from="Orange Slime/Hurtbox" to="Orange Slime" method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="Orange Slime/Timer" to="Orange Slime" method="_on_Timer_timeout"]
