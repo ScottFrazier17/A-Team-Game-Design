@@ -18,14 +18,19 @@ var knockback = Vector2.ZERO
 var direction = 1
 var dir = Vector2.ZERO
 onready var animation = get_node("AnimatedSprite")
+onready var Player = get_node("res://Player/Player.tscn")
 
 var poison_spike_scene = preload("res://Enemies/PoisonSpike.tscn")
 onready var shooting_range_area2D = $ShootingRange
+onready var shooting_range_width = get_node("ShootingRange/CollisionShape2D").get_shape().get_extents().x
 onready var player_in_sight = false
 
 onready var stats = $Stats
+var shootingRange
 
 func _ready():
+    World_Info.spike_range_multiplier = shooting_range_width
+    
     #print(stats.MAX_HEALTH)
     #print(stats.CURRENT_HEALTH)
     #velocity.x = MOVE_SPEED
@@ -34,9 +39,8 @@ func _ready():
     
 
 func _physics_process(delta):
-    #dir = get_global_mouse_position()
-    #dir = dir - global_position
-    #dir = Vector2(-1,1)
+    #print(Player)
+    
     player_in_sight = determineShootingDir()
     
     #World_Info.poison_spike_dir = dir

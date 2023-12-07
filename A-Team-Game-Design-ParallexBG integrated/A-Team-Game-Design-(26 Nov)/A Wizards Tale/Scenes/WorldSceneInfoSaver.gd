@@ -1,6 +1,6 @@
 extends Node
 
-var starter_pos = Vector2(206,536)#3500,0)#206,536)#750,-1250)#750,-3000))#206,536)
+var starter_pos = Vector2(-500,800)#206,536)#3500,0)#206,536)#750,-1250)#750,-3000))#206,536)
 var player_pos = starter_pos
 var HookPosition = Vector2.ZERO
 var BodyPosition = Vector2.ZERO
@@ -23,3 +23,5 @@ var norm_vec = Vector2.ZERO
 
 var poison_spike_dir = Vector2.ZERO
 var slime_to_player = Vector2.ZERO
+var spike_range_multiplier = 0
+var orange_slime_pos = Vector2.ZERO

@@ -4,6 +4,7 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+
 var hookChildren = []
 var collectibleChildren = []
 var is_ending_lvl = false
@@ -18,10 +19,7 @@ func _ready():
         if(collectible.name == rem_collectible):
           collectible.queue_free()
 func _process(_delta):
-  print("LEVEL2")
-  print($Player.global_position)
-  #print($Player.global_position)
-  #print($Portal.global_position)
+  
   #if($Portal/Area2D.overlaps_body($Player)): #and World_Info.collected_amt == 10):
   #  World_Info.collected_amt = 0
   #  is_end_of_level()
