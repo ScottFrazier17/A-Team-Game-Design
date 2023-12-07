@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://ParallaxBG/BlueFlower1/BlueFlower_00003.png" type="Texture" id=1]
 [ext_resource path="res://ParallaxBG/BlueFlower1/BlueFlower_00052.png" type="Texture" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://ParallaxBG/BlueFlower1/BlueFlower_00019.png" type="Texture" id=12]
 [ext_resource path="res://ParallaxBG/Kaph-Regular.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=14]
-[ext_resource path="res://StartGame.gd" type="Script" id=15]
 [ext_resource path="res://ParallaxBG/Background.png" type="Texture" id=16]
 [ext_resource path="res://ParallaxBG/Midground.png" type="Texture" id=17]
 [ext_resource path="res://ParallaxBG/Foreground.png" type="Texture" id=18]
@@ -73,6 +72,11 @@
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 22 ), ExtResource( 20 ), ExtResource( 23 ), ExtResource( 1 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 65 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 46 ), ExtResource( 54 ), ExtResource( 49 ), ExtResource( 45 ), ExtResource( 52 ), ExtResource( 12 ), ExtResource( 53 ), ExtResource( 10 ), ExtResource( 55 ), ExtResource( 44 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 64 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 70 ), ExtResource( 11 ), ExtResource( 66 ), ExtResource( 43 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 32 ), ExtResource( 9 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 39 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 8 ), ExtResource( 40 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 31 ) ],
 "loop": true,
 "name": "default",
@@ -112,14 +116,14 @@ scale = Vector2( 2.07451, 4.03358 )
 texture = ExtResource( 17 )
 
 [node name="Foreground" type="ParallaxLayer" parent="."]
-motion_scale = Vector2( 1.1, 1 )
+motion_scale = Vector2( 1.2, 1 )
 motion_mirroring = Vector2( 1918, 0 )
 
 [node name="FlowerA4" type="AnimatedSprite" parent="Foreground"]
 position = Vector2( 1379, 576 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 5
+frame = 53
 playing = true
 flip_h = true
 flip_v = true
@@ -135,7 +139,7 @@ script = ExtResource( 68 )
 position = Vector2( 417, 776 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 5
+frame = 50
 playing = true
 flip_h = true
 
@@ -150,7 +154,7 @@ script = ExtResource( 68 )
 position = Vector2( 707, 744 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 5
+frame = 50
 playing = true
 
 [node name="FlowerAlight" type="Light2D" parent="Foreground/FlowerA3"]
@@ -169,7 +173,7 @@ texture = ExtResource( 18 )
 position = Vector2( 114, 906 )
 scale = Vector2( 0.1875, 0.201823 )
 frames = SubResource( 2 )
-frame = 6
+animation = "New Anim"
 playing = true
 
 [node name="FlowerAlight" type="Light2D" parent="Foreground/FlowerA"]
@@ -178,6 +182,14 @@ texture = ExtResource( 67 )
 color = Color( 0.956863, 0.956863, 0.956863, 1 )
 energy = 0.6
 script = ExtResource( 68 )
+
+[node name="UIHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+bus = "SFX"
+
+[node name="UIPress" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 69 )
+bus = "SFX"
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
@@ -190,7 +202,7 @@ margin_right = 1329.0
 margin_bottom = 235.0
 custom_colors/font_color = Color( 1, 0.52549, 0, 1 )
 custom_fonts/font = SubResource( 3 )
-text = "A LIZARD'S TALE"
+text = "A LIZARD'S TALE?"
 
 [node name="StartGame" type="Button" parent="Control"]
 margin_left = 743.0
@@ -203,25 +215,12 @@ custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "START GAME"
 flat = true
-script = ExtResource( 15 )
-
-[node name="LoadGame" type="Button" parent="Control"]
-margin_left = 769.0
-margin_top = 646.0
-margin_right = 1167.0
-margin_bottom = 723.0
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 1, 0.862745, 0.443137, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 4 )
-text = "Load Game"
-flat = true
 
 [node name="Options" type="MenuButton" parent="Control"]
-margin_left = 794.0
-margin_top = 757.0
-margin_right = 1139.0
-margin_bottom = 834.0
+margin_left = 783.0
+margin_top = 659.0
+margin_right = 1128.0
+margin_bottom = 736.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 0.862745, 0.443137, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -229,10 +228,10 @@ custom_fonts/font = SubResource( 4 )
 text = "Options"
 
 [node name="Quit" type="Button" parent="Control"]
-margin_left = 62.0
-margin_top = 977.0
-margin_right = 273.0
-margin_bottom = 1054.0
+margin_left = 64.0
+margin_top = 990.0
+margin_right = 275.0
+margin_bottom = 1067.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 0.862745, 0.443137, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -252,22 +251,11 @@ custom_fonts/font = SubResource( 4 )
 text = "Credits..."
 flat = true
 
-[node name="UIHover" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 19 )
-bus = "SFX"
-
-[node name="UIPress" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 69 )
-bus = "SFX"
-
-[connection signal="mouse_entered" from="Control/StartGame" to="Control/StartGame" method="_on_StartGame_mouse_entered"]
-[connection signal="mouse_exited" from="Control/StartGame" to="Control/StartGame" method="_on_StartGame_mouse_exited"]
-[connection signal="pressed" from="Control/StartGame" to="Control/StartGame" method="_on_StartGame_pressed"]
-[connection signal="mouse_entered" from="Control/LoadGame" to="Control/StartGame" method="_on_LoadGame_mouse_entered"]
-[connection signal="pressed" from="Control/LoadGame" to="Control/StartGame" method="_on_LoadGame_pressed"]
-[connection signal="mouse_entered" from="Control/Options" to="Control/StartGame" method="_on_Options_mouse_entered"]
-[connection signal="pressed" from="Control/Options" to="Control/StartGame" method="_on_Options_pressed"]
-[connection signal="mouse_entered" from="Control/Quit" to="Control/StartGame" method="_on_Quit_mouse_entered"]
-[connection signal="pressed" from="Control/Quit" to="Control/StartGame" method="_on_Quit_pressed"]
-[connection signal="mouse_entered" from="Control/Credits" to="Control/StartGame" method="_on_Credits_mouse_entered"]
-[connection signal="pressed" from="Control/Credits" to="Control/StartGame" method="_on_Credits_pressed"]
+[connection signal="mouse_entered" from="Control/StartGame" to="." method="_on_StartGame_mouse_entered"]
+[connection signal="pressed" from="Control/StartGame" to="." method="_on_StartGame_pressed"]
+[connection signal="mouse_entered" from="Control/Options" to="." method="_on_Options_mouse_entered"]
+[connection signal="pressed" from="Control/Options" to="." method="_on_Options_pressed"]
+[connection signal="mouse_entered" from="Control/Quit" to="." method="_on_Quit_mouse_entered"]
+[connection signal="pressed" from="Control/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="mouse_entered" from="Control/Credits" to="." method="_on_Credits_mouse_entered"]
+[connection signal="pressed" from="Control/Credits" to="." method="_on_Credits_pressed"]

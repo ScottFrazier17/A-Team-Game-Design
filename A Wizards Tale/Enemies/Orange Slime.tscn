@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00000.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00002.png" type="Texture" id=2]
@@ -30,6 +30,10 @@
 [ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00027.png" type="Texture" id=28]
 [ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00028.png" type="Texture" id=29]
 [ext_resource path="res://Assets/Slimes/SlimeOrange/SlimeOrange_00029.png" type="Texture" id=30]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Enemies/Orange Slime.gd" type="Script" id=32]
+[ext_resource path="res://Hitboxes and Hurtboxes/Stats.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=34]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -40,17 +44,76 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 108.0
-height = 0.0
+radius = 89.0
+height = 204.0
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 45.0
+height = 66.0
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 67.9995
+height = 270.001
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 1416.5, 827.5 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Orange Slime" type="KinematicBody2D" parent="."]
+position = Vector2( -9, -36 )
+collision_layer = 4
+script = ExtResource( 32 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Orange Slime"]
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 12
+frame = 20
 playing = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 3, 28 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Orange Slime"]
+visible = false
+position = Vector2( 8, 37 )
+rotation = 1.5708
 shape = SubResource( 2 )
+
+[node name="Hurtbox" parent="Orange Slime" instance=ExtResource( 31 )]
+visible = false
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="Orange Slime/Hurtbox" index="0"]
+position = Vector2( 7, -20 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="Stats" parent="Orange Slime" instance=ExtResource( 33 )]
+MAX_HEALTH = 3
+
+[node name="Hitbox" parent="Orange Slime" instance=ExtResource( 34 )]
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Orange Slime/Hitbox" index="0"]
+visible = false
+position = Vector2( 14, 56 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="Orange Slime"]
+
+[node name="Position2D" type="Position2D" parent="Orange Slime"]
+position = Vector2( 1, 0 )
+
+[node name="ShootTimer" type="Timer" parent="Orange Slime"]
+
+[node name="ShootingRange" type="Area2D" parent="Orange Slime"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Orange Slime/ShootingRange"]
+position = Vector2( 24.5, -50.5 )
+shape = SubResource( 5 )
+
+[connection signal="area_entered" from="Orange Slime/Hurtbox" to="Orange Slime" method="_on_Hurtbox_area_entered"]
+[connection signal="timeout" from="Orange Slime/Timer" to="Orange Slime" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Orange Slime/ShootTimer" to="Orange Slime" method="_on_ShootTimer_timeout"]
+
+[editable path="Orange Slime/Hurtbox"]
+[editable path="Orange Slime/Hitbox"]

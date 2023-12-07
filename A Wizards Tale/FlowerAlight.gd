@@ -13,3 +13,4 @@ func _process(delta):
     if(updatedEnergy<MIN_ENERGY):
       flag = 1  
     set_energy(updatedEnergy)      
+    #print(updatedEnergy)
