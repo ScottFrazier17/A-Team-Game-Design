@@ -49,4 +49,5 @@ func is_end_of_level():
   World_Info.starter_pos = Vector2(50,250)
   World_Info.player_pos = Vector2(50,250)
   World_Info.removedCollectibles = []
+  World_Info.player_health = 4
   TransitionLayer.transition(World_Info.curr_level)    

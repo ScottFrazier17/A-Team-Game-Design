@@ -24,7 +24,6 @@ var poison_spike_scene = preload("res://Enemies/PoisonSpike.tscn")
 onready var shooting_range_area2D = $ShootingRange
 onready var shooting_range_width = get_node("ShootingRange/CollisionShape2D").get_shape().get_extents().x
 onready var player_in_sight = false
-onready var HurtFx = $Hurt
 onready var stats = $Stats
 var shootingRange
 

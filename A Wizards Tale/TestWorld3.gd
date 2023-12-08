@@ -60,4 +60,5 @@ func _on_WinWait_timeout():
   World_Info.player_pos = Vector2(206,536)
   World_Info.curr_level = "res://Scenes/Level1.tscn"
   World_Info.removedCollectibles = []
+  World_Info.player_health = 4
   TransitionLayer.transition("res://Scenes/MainMenu.tscn") 
